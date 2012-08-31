@@ -13,17 +13,10 @@ handler500 = "pinax.views.server_error"
 
 urlpatterns = patterns( "",
     url( r"^$", direct_to_template, {
-        "template": "homepage/redtreehome.html",
+        "template": "homepage/home.html",
     }, name="home" ),
     url( r"^admin/", include( admin.site.urls ) ),
-    url( r"^request/", include( 'request.urls' ) ),
     url( r"^profile/", include( 'Profiles.urls' ) ),
-    url( r"^test$", direct_to_template, {
-        "template": "homepage/blank.html",
-    }, name="home" ),
-    url( r"^home$", direct_to_template, {
-        "template": "homepage/redtreehome.html",
-    }, name="homepage" ),
     url( r'^my_admin/jsi18n', 'django.views.i18n.javascript_catalog' ),
  ) + static( settings.MEDIA_URL, document_root=settings.MEDIA_ROOT )
 
